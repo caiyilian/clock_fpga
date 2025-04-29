@@ -2,7 +2,7 @@ module display (
     output reg [6:0] decodeout, // 显示段信号
     input [3:0] indec          // 输入数字
 );
-
+// 实验室里面的开发板的数码管是共阳common anode，低电平0亮，高电平1灭
 always @(indec) begin
     case(indec) // 用 case 语句进行译码
         4'd0: decodeout = 7'b1000000; // 0
@@ -15,7 +15,7 @@ always @(indec) begin
         4'd7: decodeout = 7'b1111000; // 7
         4'd8: decodeout = 7'b0000000; // 8
         4'd9: decodeout = 7'b0011000; // 9
-        default: decodeout=7'b1111111; // 默认情况
+        default: decodeout=7'b1111111; // 默认情况全灭
     endcase
 end
 endmodule

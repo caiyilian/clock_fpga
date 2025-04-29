@@ -13,14 +13,17 @@ module minute_counter (
     // 分钟计数器逻辑
     always @(posedge clk or posedge reset) begin
         if (reset) begin
-            minutes <= 0;   // 复位时计数器清零
+            minutes <= 58;   // 复位时计数器清零，但是我想测试时计数器是否正常所以先设置初始值为58这样只需要等2分钟即可
             min_carry <= 0; // 复位时进位信号清零
         end else if (sec_carry) begin // 当接收到秒进位信号时
             if (minutes >= 59) begin
                 minutes <= 0;    // 当计数到59时，重置为0
-                min_carry <= 1;  // 产生分钟进位信号
+                min_carry <= 0;  // 清除进位信号
+            end else if (minutes == 58) begin
+                minutes <= minutes + 1; // 不是59就计数器加1
+                min_carry <= 1; // 产生秒进位信号
             end else begin
-                minutes <= minutes + 1; // 否则计数器加1
+                minutes <= minutes + 1; // 不是59就计数器加1
                 min_carry <= 0;         // 清除进位信号
             end
         end else begin
