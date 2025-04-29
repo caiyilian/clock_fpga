@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="main">
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|hour_counter:hour_counter_inst|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_2am.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|minute_counter:min_counter_inst|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_3am.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|second_counter:sec_counter_inst|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_62m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|hour_counter:hour_counter_inst|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_52m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|minute_counter:min_counter_inst|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_62m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|second_counter:sec_counter_inst|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_3am.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

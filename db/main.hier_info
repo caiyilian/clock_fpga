@@ -1,0 +1,368 @@
+|main
+clk_50MHz => clk_50MHz.IN3
+reset => reset.IN5
+min_add => min_add.IN2
+min_reduce => min_reduce.IN2
+hour_add => hour_add.IN2
+hour_reduce => hour_reduce.IN2
+sec_seg_tens[0] << display:sec_tens_display.decodeout
+sec_seg_tens[1] << display:sec_tens_display.decodeout
+sec_seg_tens[2] << display:sec_tens_display.decodeout
+sec_seg_tens[3] << display:sec_tens_display.decodeout
+sec_seg_tens[4] << display:sec_tens_display.decodeout
+sec_seg_tens[5] << display:sec_tens_display.decodeout
+sec_seg_tens[6] << display:sec_tens_display.decodeout
+sec_seg_ones[0] << display:sec_ones_display.decodeout
+sec_seg_ones[1] << display:sec_ones_display.decodeout
+sec_seg_ones[2] << display:sec_ones_display.decodeout
+sec_seg_ones[3] << display:sec_ones_display.decodeout
+sec_seg_ones[4] << display:sec_ones_display.decodeout
+sec_seg_ones[5] << display:sec_ones_display.decodeout
+sec_seg_ones[6] << display:sec_ones_display.decodeout
+min_seg_tens[0] << display:min_tens_display.decodeout
+min_seg_tens[1] << display:min_tens_display.decodeout
+min_seg_tens[2] << display:min_tens_display.decodeout
+min_seg_tens[3] << display:min_tens_display.decodeout
+min_seg_tens[4] << display:min_tens_display.decodeout
+min_seg_tens[5] << display:min_tens_display.decodeout
+min_seg_tens[6] << display:min_tens_display.decodeout
+min_seg_ones[0] << display:min_ones_display.decodeout
+min_seg_ones[1] << display:min_ones_display.decodeout
+min_seg_ones[2] << display:min_ones_display.decodeout
+min_seg_ones[3] << display:min_ones_display.decodeout
+min_seg_ones[4] << display:min_ones_display.decodeout
+min_seg_ones[5] << display:min_ones_display.decodeout
+min_seg_ones[6] << display:min_ones_display.decodeout
+hour_seg_tens[0] << display:hour_tens_display.decodeout
+hour_seg_tens[1] << display:hour_tens_display.decodeout
+hour_seg_tens[2] << display:hour_tens_display.decodeout
+hour_seg_tens[3] << display:hour_tens_display.decodeout
+hour_seg_tens[4] << display:hour_tens_display.decodeout
+hour_seg_tens[5] << display:hour_tens_display.decodeout
+hour_seg_tens[6] << display:hour_tens_display.decodeout
+hour_seg_ones[0] << display:hour_ones_display.decodeout
+hour_seg_ones[1] << display:hour_ones_display.decodeout
+hour_seg_ones[2] << display:hour_ones_display.decodeout
+hour_seg_ones[3] << display:hour_ones_display.decodeout
+hour_seg_ones[4] << display:hour_ones_display.decodeout
+hour_seg_ones[5] << display:hour_ones_display.decodeout
+hour_seg_ones[6] << display:hour_ones_display.decodeout
+min_add_sig << led:min_add_btn_display.led_sig
+min_reduce_sig << led:min_reduce_btn_display.led_sig
+hour_add_sig << led:hour_add_btn_display.led_sig
+hour_reduce_sig << led:hour_reduce_btn_display.led_sig
+
+
+|main|split:split_inst
+clk => clk_out~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => count[13].CLK
+clk => count[14].CLK
+clk => count[15].CLK
+clk => count[16].CLK
+clk => count[17].CLK
+clk => count[18].CLK
+clk => count[19].CLK
+clk => count[20].CLK
+clk => count[21].CLK
+clk => count[22].CLK
+clk => count[23].CLK
+clk => count[24].CLK
+clk => count[25].CLK
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => clk_out.OUTPUTSELECT
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|split_50ms:split_50ms_inst
+clk => clk_out_50ms~reg0.CLK
+clk => count_50ms[0].CLK
+clk => count_50ms[1].CLK
+clk => count_50ms[2].CLK
+clk => count_50ms[3].CLK
+clk => count_50ms[4].CLK
+clk => count_50ms[5].CLK
+clk => count_50ms[6].CLK
+clk => count_50ms[7].CLK
+clk => count_50ms[8].CLK
+clk => count_50ms[9].CLK
+clk => count_50ms[10].CLK
+clk => count_50ms[11].CLK
+clk => count_50ms[12].CLK
+clk => count_50ms[13].CLK
+clk => count_50ms[14].CLK
+clk => count_50ms[15].CLK
+clk => count_50ms[16].CLK
+clk => count_50ms[17].CLK
+clk => count_50ms[18].CLK
+clk => count_50ms[19].CLK
+clk => count_50ms[20].CLK
+clk => count_50ms[21].CLK
+clk => count_50ms[22].CLK
+clk => count_50ms[23].CLK
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => count_50ms.OUTPUTSELECT
+reset => clk_out_50ms.OUTPUTSELECT
+clk_out_50ms <= clk_out_50ms~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|second_counter:sec_counter_inst
+clk => sec_carry~reg0.CLK
+clk => seconds[0].CLK
+clk => seconds[1].CLK
+clk => seconds[2].CLK
+clk => seconds[3].CLK
+clk => seconds[4].CLK
+clk => seconds[5].CLK
+reset => sec_carry~reg0.ACLR
+reset => seconds[0].ACLR
+reset => seconds[1].PRESET
+reset => seconds[2].ACLR
+reset => seconds[3].ACLR
+reset => seconds[4].PRESET
+reset => seconds[5].PRESET
+sec_tens[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+sec_tens[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+sec_tens[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+sec_tens[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+sec_ones[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+sec_ones[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+sec_ones[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+sec_ones[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+sec_carry <= sec_carry~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|minute_counter:min_counter_inst
+clk => min_reduce_prev.CLK
+clk => min_add_prev.CLK
+clk => sec_carry_prev.CLK
+clk => min_carry~reg0.CLK
+clk => minutes[0].CLK
+clk => minutes[1].CLK
+clk => minutes[2].CLK
+clk => minutes[3].CLK
+clk => minutes[4].CLK
+clk => minutes[5].CLK
+reset => sec_carry_prev.ACLR
+reset => min_carry~reg0.ACLR
+reset => minutes[0].ACLR
+reset => minutes[1].PRESET
+reset => minutes[2].ACLR
+reset => minutes[3].PRESET
+reset => minutes[4].PRESET
+reset => minutes[5].PRESET
+reset => min_reduce_prev.ENA
+reset => min_add_prev.ENA
+sec_carry => always0.IN1
+sec_carry => sec_carry_prev.DATAIN
+min_add => always0.IN1
+min_add => min_add_prev.DATAIN
+min_reduce => always0.IN1
+min_reduce => min_reduce_prev.DATAIN
+min_tens[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+min_tens[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+min_tens[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+min_tens[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+min_ones[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+min_ones[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+min_ones[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+min_ones[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+min_carry <= min_carry~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|hour_counter:hour_counter_inst
+clk => hour_reduce_prev.CLK
+clk => hour_add_prev.CLK
+clk => min_carry_prev.CLK
+clk => hours[0].CLK
+clk => hours[1].CLK
+clk => hours[2].CLK
+clk => hours[3].CLK
+clk => hours[4].CLK
+reset => min_carry_prev.ACLR
+reset => hours[0].ACLR
+reset => hours[1].ACLR
+reset => hours[2].ACLR
+reset => hours[3].ACLR
+reset => hours[4].ACLR
+reset => hour_reduce_prev.ENA
+reset => hour_add_prev.ENA
+min_carry => always0.IN1
+min_carry => min_carry_prev.DATAIN
+hour_add => always0.IN1
+hour_add => hour_add_prev.DATAIN
+hour_reduce => always0.IN1
+hour_reduce => hour_reduce_prev.DATAIN
+hour_tens[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+hour_tens[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+hour_tens[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+hour_tens[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+hour_ones[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+hour_ones[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+hour_ones[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+hour_ones[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|display:sec_tens_display
+decodeout[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+indec[0] => Decoder0.IN3
+indec[1] => Decoder0.IN2
+indec[2] => Decoder0.IN1
+indec[3] => Decoder0.IN0
+
+
+|main|display:sec_ones_display
+decodeout[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+indec[0] => Decoder0.IN3
+indec[1] => Decoder0.IN2
+indec[2] => Decoder0.IN1
+indec[3] => Decoder0.IN0
+
+
+|main|display:min_tens_display
+decodeout[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+indec[0] => Decoder0.IN3
+indec[1] => Decoder0.IN2
+indec[2] => Decoder0.IN1
+indec[3] => Decoder0.IN0
+
+
+|main|display:min_ones_display
+decodeout[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+indec[0] => Decoder0.IN3
+indec[1] => Decoder0.IN2
+indec[2] => Decoder0.IN1
+indec[3] => Decoder0.IN0
+
+
+|main|display:hour_tens_display
+decodeout[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+indec[0] => Decoder0.IN3
+indec[1] => Decoder0.IN2
+indec[2] => Decoder0.IN1
+indec[3] => Decoder0.IN0
+
+
+|main|display:hour_ones_display
+decodeout[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+decodeout[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+indec[0] => Decoder0.IN3
+indec[1] => Decoder0.IN2
+indec[2] => Decoder0.IN1
+indec[3] => Decoder0.IN0
+
+
+|main|led:min_add_btn_display
+btn => led_sig.DATAIN
+led_sig <= btn.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|led:min_reduce_btn_display
+btn => led_sig.DATAIN
+led_sig <= btn.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|led:hour_add_btn_display
+btn => led_sig.DATAIN
+led_sig <= btn.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|led:hour_reduce_btn_display
+btn => led_sig.DATAIN
+led_sig <= btn.DB_MAX_OUTPUT_PORT_TYPE
+
+
