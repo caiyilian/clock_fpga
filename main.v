@@ -15,7 +15,11 @@ module main (
     
     // 时显示数码管
     output wire [6:0] hour_seg_tens, // 时十位数码管段信号
-    output wire [6:0] hour_seg_ones  // 时个位数码管段信号
+    output wire [6:0] hour_seg_ones,  // 时个位数码管段信号
+    output wire min_add_sig, // 输出分增加信号
+    output wire min_reduce_sig, // 输出分减少信号
+    output wire hour_add_sig, // 输出小时增加信号
+    output wire hour_reduce_sig // 输出小时减少信号
 );
 
     // 内部信号
@@ -111,5 +115,22 @@ module main (
         .indec(hour_ones),
         .decodeout(hour_seg_ones)
     );
-
+    // 分增加和减少的按钮状态反映到led灯显示
+    led min_add_btn_display (
+        .btn(min_add),
+        .led_sig(min_add_sig)
+    );
+    led min_reduce_btn_display (
+        .btn(min_reduce),
+        .led_sig(min_reduce_sig)
+    );
+    // 小时增加和减少的按钮状态反映到led灯显示
+    led hour_add_btn_display (
+        .btn(hour_add),
+        .led_sig(hour_add_sig)
+    );
+    led hour_reduce_btn_display (
+        .btn(hour_reduce),
+        .led_sig(hour_reduce_sig)
+    );
 endmodule
