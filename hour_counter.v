@@ -8,18 +8,24 @@ module hour_counter (
 
     // 定义小时计数器
     reg [4:0] hours; // 可以计数0-23
-
+    reg min_carry_prev;
     // 小时计数器逻辑
     always @(posedge clk or posedge reset) begin
         if (reset) begin
             hours <= 0; // 复位时计数器清零
-        end else if (min_carry) begin // 当接收到分钟进位信号时
-            if (hours >= 23) begin
-                hours <= 0; // 当计数到23时，重置为0
-            end else begin
-                hours <= hours + 1; // 否则计数器加1
-            end
-        end
+            min_carry_prev <= 0;
+		  end else begin
+			  if (min_carry == 1 && min_carry_prev == 0) begin // 当接收到分钟进位信号时
+					if (hours >= 23) begin
+						 hours <= 0; // 当计数到23时，重置为0
+					end else begin
+						 hours <= hours + 1; // 否则计数器加1
+					end
+			  
+			  end
+			  min_carry_prev <= min_carry;
+		  end
+			
     end
 
     // 将小时转换为十位和个位

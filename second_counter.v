@@ -12,15 +12,12 @@ module second_counter (
     // 秒计数器逻辑, posedge是上升沿的意思
     always @(posedge clk or posedge reset) begin
         if (reset) begin
-            seconds <= 0; // 复位时计数器清零
+            seconds <= 50; // 复位时计数器清零
             sec_carry <= 0; // 复位时进位信号清零
         end else begin
-            if (seconds >= 59) begin
+            if (seconds == 59) begin
                 seconds <= 0; // 当计数到59时，重置为0
-                sec_carry <= 0; // 清除进位信号
-            end else if (seconds == 58) begin
-                seconds <= seconds + 1; // 不是59就计数器加1
-                sec_carry <= 1; // 产生秒进位信号
+                sec_carry <= 1; // 产生进位信号 
             end else begin
                 seconds <= seconds + 1; // 不是59就计数器加1
                 sec_carry <= 0; // 清除进位信号

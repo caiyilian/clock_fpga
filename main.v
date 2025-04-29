@@ -37,6 +37,12 @@ module main (
         .reset(reset),
         .clk_out(clk_1Hz)
     );
+    // 实例化分频器模块 - 将50MHz分频为20Hz
+    split_50ms split_50ms_inst (
+        .clk(clk_50MHz),
+        .reset(reset),
+        .clk_out_50ms(clk_20Hz)
+    );
 
     // 实例化秒计数器模块
     second_counter sec_counter_inst (
@@ -49,7 +55,7 @@ module main (
     
     // 实例化分钟计数器模块
     minute_counter min_counter_inst (
-        .clk(clk_1Hz),
+        .clk(clk_20Hz),
         .reset(reset),
         .sec_carry(sec_carry),
         .min_tens(min_tens),
@@ -59,7 +65,7 @@ module main (
     
     // 实例化小时计数器模块
     hour_counter hour_counter_inst (
-        .clk(clk_1Hz),
+        .clk(clk_50MHz),
         .reset(reset),
         .min_carry(min_carry),
         .hour_tens(hour_tens),
