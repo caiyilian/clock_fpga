@@ -1,0 +1,31 @@
+module hour_counter (
+    input wire clk,           // 输入时钟信号
+    input wire reset,         // 复位信号
+    input wire min_carry,     // 分钟进位信号，当分钟计数器从59变为0时为高电平
+    output reg [3:0] hour_tens, // 小时计数器的十位
+    output reg [3:0] hour_ones  // 小时计数器的个位
+);
+
+    // 定义小时计数器
+    reg [4:0] hours; // 可以计数0-23
+
+    // 小时计数器逻辑
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            hours <= 0; // 复位时计数器清零
+        end else if (min_carry) begin // 当接收到分钟进位信号时
+            if (hours >= 23) begin
+                hours <= 0; // 当计数到23时，重置为0
+            end else begin
+                hours <= hours + 1; // 否则计数器加1
+            end
+        end
+    end
+
+    // 将小时转换为十位和个位
+    always @(hours) begin
+        hour_tens = hours / 10; // 十位
+        hour_ones = hours % 10; // 个位
+    end
+
+endmodule
