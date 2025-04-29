@@ -2,6 +2,8 @@ module minute_counter (
     input wire clk,           // 输入时钟信号
     input wire reset,         // 复位信号
     input wire sec_carry,     // 秒进位信号，当秒计数器从59变为0时为高电平
+	  input wire min_add,       // 分钟增加按钮，低电平触发，用KEY
+	  input wire min_reduce,       // 分钟减少按钮，低电平触发，用KEY
     output reg [3:0] min_tens, // 分钟计数器的十位
     output reg [3:0] min_ones, // 分钟计数器的个位
     output reg min_carry      // 分钟进位信号，当分钟计数器从59变为0时为高电平
@@ -10,6 +12,8 @@ module minute_counter (
     // 定义分钟计数器
     reg [5:0] minutes; // 可以计数0-59
     reg sec_carry_prev;
+	 reg min_add_prev;
+	 reg min_reduce_prev;
     // 分钟计数器逻辑
     always @(posedge clk or posedge reset) begin
         if (reset) begin
@@ -27,11 +31,24 @@ module minute_counter (
                     minutes <= minutes + 1; // 不是59就计数器加1
                     min_carry <= 0;         // 清除进位信号
                 end
+				end else if (min_add == 1 && min_add_prev == 0) begin
+                if (minutes == 59) begin
+                    minutes <= 0;    // 当计数到59时，重置为0
+                    min_carry <= 1;  // 进位信号置为高电平
+                end else begin
+                    minutes <= minutes + 1; // 不是59就计数器加1
+                    min_carry <= 0;         // 清除进位信号
+                end
+			   end else if (min_reduce == 1 && min_reduce_prev == 0) begin
+					if (minutes == 0) minutes <= 59; 
+					else minutes <= minutes - 1;
             end else begin
                 min_carry <= 0; // 在非进位时刻，确保进位信号为0
             end
 				// 更新 sec_carry_prev
             sec_carry_prev <= sec_carry;
+				min_add_prev <= min_add;
+				min_reduce_prev <= min_reduce;
         end
     end
 

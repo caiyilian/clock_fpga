@@ -2,6 +2,8 @@ module hour_counter (
     input wire clk,           // 输入时钟信号
     input wire reset,         // 复位信号
     input wire min_carry,     // 分钟进位信号，当分钟计数器从59变为0时为高电平
+    input wire hour_add,       // 小时增加按钮，低电平触发，用KEY
+    input wire hour_reduce,       // 小时减少按钮，低电平触发，用KEY
     output reg [3:0] hour_tens, // 小时计数器的十位
     output reg [3:0] hour_ones  // 小时计数器的个位
 );
@@ -9,6 +11,8 @@ module hour_counter (
     // 定义小时计数器
     reg [4:0] hours; // 可以计数0-23
     reg min_carry_prev;
+    reg hour_add_prev;
+    reg hour_reduce_prev;
     // 小时计数器逻辑
     always @(posedge clk or posedge reset) begin
         if (reset) begin
@@ -21,9 +25,19 @@ module hour_counter (
 					end else begin
 						 hours <= hours + 1; // 否则计数器加1
 					end
-			  
-			  end
+			  end else if (hour_add == 1 && hour_add_prev == 0) begin 
+					if (hours == 23) begin
+						 hours <= 0; // 当计数到23时，重置为0
+					end else begin
+						 hours <= hours + 1; // 否则计数器加1
+					end
+			  end else if (hour_reduce == 1 && hour_reduce_prev == 0) begin 
+					if (hours == 0) hours <= 23; 
+					else hours <= hours - 1; 
+				end
 			  min_carry_prev <= min_carry;
+			  hour_add_prev <= hour_add;
+			  hour_reduce_prev <= hour_reduce;
 		  end
 			
     end

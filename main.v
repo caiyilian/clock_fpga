@@ -1,6 +1,10 @@
 module main (
     input wire clk_50MHz, // 50MHz输入时钟
     input wire reset,     // 复位信号
+    input wire min_add,       // 分钟增加按钮
+    input wire min_reduce,       // 分钟减少按钮
+    input wire hour_add,       // 小时增加按钮
+    input wire hour_reduce,       // 小时增加按钮
     // 秒显示数码管
     output wire [6:0] sec_seg_tens, // 秒十位数码管段信号
     output wire [6:0] sec_seg_ones, // 秒个位数码管段信号
@@ -26,7 +30,6 @@ module main (
     wire [3:0] min_tens; // 分钟计数器的十位
     wire [3:0] min_ones; // 分钟计数器的个位
     wire min_carry;      // 分钟进位信号
-    
     // 小时计数器信号
     wire [3:0] hour_tens; // 小时计数器的十位
     wire [3:0] hour_ones; // 小时计数器的个位
@@ -58,6 +61,8 @@ module main (
         .clk(clk_20Hz),
         .reset(reset),
         .sec_carry(sec_carry),
+        .min_add(min_add),
+        .min_reduce(min_reduce),
         .min_tens(min_tens),
         .min_ones(min_ones),
         .min_carry(min_carry)
@@ -68,6 +73,8 @@ module main (
         .clk(clk_50MHz),
         .reset(reset),
         .min_carry(min_carry),
+        .hour_add(hour_add),
+        .hour_reduce(hour_reduce),
         .hour_tens(hour_tens),
         .hour_ones(hour_ones)
     );
