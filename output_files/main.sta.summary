@@ -1,0 +1,149 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'clk_50MHz'
+Slack : -2.704
+TNS   : -124.911
+
+Type  : Slow 1100mV 85C Model Setup 'split_50ms:split_50ms_inst|clk_out_50ms'
+Slack : -2.410
+TNS   : -14.305
+
+Type  : Slow 1100mV 85C Model Setup 'split:split_inst|clk_out'
+Slack : -1.247
+TNS   : -11.689
+
+Type  : Slow 1100mV 85C Model Hold 'clk_50MHz'
+Slack : -1.950
+TNS   : -8.823
+
+Type  : Slow 1100mV 85C Model Hold 'split_50ms:split_50ms_inst|clk_out_50ms'
+Slack : 0.036
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'split:split_inst|clk_out'
+Slack : 0.230
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk_50MHz'
+Slack : -0.577
+TNS   : -31.672
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'split:split_inst|clk_out'
+Slack : -0.394
+TNS   : -6.203
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'split_50ms:split_50ms_inst|clk_out_50ms'
+Slack : -0.394
+TNS   : -5.672
+
+Type  : Slow 1100mV 0C Model Setup 'clk_50MHz'
+Slack : -2.904
+TNS   : -122.104
+
+Type  : Slow 1100mV 0C Model Setup 'split_50ms:split_50ms_inst|clk_out_50ms'
+Slack : -2.437
+TNS   : -14.554
+
+Type  : Slow 1100mV 0C Model Setup 'split:split_inst|clk_out'
+Slack : -1.268
+TNS   : -11.984
+
+Type  : Slow 1100mV 0C Model Hold 'clk_50MHz'
+Slack : -1.852
+TNS   : -9.745
+
+Type  : Slow 1100mV 0C Model Hold 'split_50ms:split_50ms_inst|clk_out_50ms'
+Slack : 0.024
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'split:split_inst|clk_out'
+Slack : 0.219
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk_50MHz'
+Slack : -0.608
+TNS   : -34.542
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'split:split_inst|clk_out'
+Slack : -0.394
+TNS   : -6.240
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'split_50ms:split_50ms_inst|clk_out_50ms'
+Slack : -0.394
+TNS   : -5.721
+
+Type  : Fast 1100mV 85C Model Setup 'clk_50MHz'
+Slack : -1.328
+TNS   : -51.500
+
+Type  : Fast 1100mV 85C Model Setup 'split_50ms:split_50ms_inst|clk_out_50ms'
+Slack : -1.087
+TNS   : -5.844
+
+Type  : Fast 1100mV 85C Model Setup 'split:split_inst|clk_out'
+Slack : -0.421
+TNS   : -3.526
+
+Type  : Fast 1100mV 85C Model Hold 'clk_50MHz'
+Slack : -1.083
+TNS   : -5.616
+
+Type  : Fast 1100mV 85C Model Hold 'split_50ms:split_50ms_inst|clk_out_50ms'
+Slack : -0.210
+TNS   : -0.960
+
+Type  : Fast 1100mV 85C Model Hold 'split:split_inst|clk_out'
+Slack : 0.067
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk_50MHz'
+Slack : -0.565
+TNS   : -6.543
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'split_50ms:split_50ms_inst|clk_out_50ms'
+Slack : 0.037
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'split:split_inst|clk_out'
+Slack : 0.066
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'clk_50MHz'
+Slack : -1.275
+TNS   : -44.131
+
+Type  : Fast 1100mV 0C Model Setup 'split_50ms:split_50ms_inst|clk_out_50ms'
+Slack : -0.984
+TNS   : -5.308
+
+Type  : Fast 1100mV 0C Model Setup 'split:split_inst|clk_out'
+Slack : -0.362
+TNS   : -2.956
+
+Type  : Fast 1100mV 0C Model Hold 'clk_50MHz'
+Slack : -1.032
+TNS   : -6.170
+
+Type  : Fast 1100mV 0C Model Hold 'split_50ms:split_50ms_inst|clk_out_50ms'
+Slack : -0.235
+TNS   : -1.109
+
+Type  : Fast 1100mV 0C Model Hold 'split:split_inst|clk_out'
+Slack : 0.052
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk_50MHz'
+Slack : -0.563
+TNS   : -6.497
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'split_50ms:split_50ms_inst|clk_out_50ms'
+Slack : 0.059
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'split:split_inst|clk_out'
+Slack : 0.080
+TNS   : 0.000
+
+------------------------------------------------------------
