@@ -18,10 +18,7 @@ module minute_counter (
         end else if (sec_carry) begin // 当接收到秒进位信号时
             if (minutes >= 59) begin
                 minutes <= 0;    // 当计数到59时，重置为0
-                min_carry <= 0;  // 清除进位信号
-            end else if (minutes == 58) begin
-                minutes <= minutes + 1; // 不是59就计数器加1
-                min_carry <= 1; // 产生秒进位信号
+                min_carry <= 1;  // 产生进位信号
             end else begin
                 minutes <= minutes + 1; // 不是59就计数器加1
                 min_carry <= 0;         // 清除进位信号
